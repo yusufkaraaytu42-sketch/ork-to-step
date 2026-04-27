@@ -1,0 +1,3 @@
+# Dependencies for the ork_to_step.py Python Bridge
+# (ANSYS-ready STEP generation from OpenRocket .ork files)
+cadquery>=2.4

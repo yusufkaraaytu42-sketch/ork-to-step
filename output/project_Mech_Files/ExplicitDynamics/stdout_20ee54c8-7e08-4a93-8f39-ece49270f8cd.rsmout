@@ -1,0 +1,123 @@
+﻿[7:19:24 PM][DEBUG]: 
+[7:19:24 PM][DEBUG]: External cluster command: Job:1 ---------------------------------------
+[7:19:24 PM][DEBUG]:     Cluster command before expansion: C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics/clusterjob_20ee54c8-7e08-4a93-8f39-ece49270f8cd.bat 
+[7:19:24 PM][DEBUG]:     Final cluster command: C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics/clusterjob_20ee54c8-7e08-4a93-8f39-ece49270f8cd.bat 
+[7:19:24 PM][DEBUG]:     Working directory : C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics
+[7:19:24 PM][DEBUG]:     Variables:
+[7:19:24 PM][DEBUG]:         RSM_HPC_VERSION=261
+[7:19:24 PM][DEBUG]:         RSM_COMPUTE_SERVER_MACHINE_NAME=Yusuf
+[7:19:24 PM][DEBUG]:         RSM_HPC_STDOUTFILE=stdout_20ee54c8-7e08-4a93-8f39-ece49270f8cd.rsmout
+[7:19:24 PM][DEBUG]:         ARC_ROOT=C:\Program Files\ANSYS Inc\ANSYS Student\v261\RSM\Config\scripts\..\..\ARC
+[7:19:24 PM][DEBUG]:         PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+[7:19:24 PM][DEBUG]:         RSM_HPC_USER=YUSUF\ekryt
+[7:19:24 PM][DEBUG]:         CFX5_CCL_LIBS=CFXPostRules.ccl;RULES;VARIABLES;MATERIAL;REACTIONS
+[7:19:24 PM][DEBUG]:         RANDFILE=C:\Users\ekryt\AppData\Local\Temp\.ansys\\.ansys.rnd
+[7:19:24 PM][DEBUG]:         CUE_LOCAL_DATA_DIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\etc
+[7:19:24 PM][DEBUG]:         KMP_WARNINGS=0
+[7:19:24 PM][DEBUG]:         RSM_HPC_SCRIPTS_DIRECTORY=%AWP_ROOT261%\RSM\Config\scripts
+[7:19:24 PM][DEBUG]:         CFX_LANGUAGE=en_US
+[7:19:24 PM][DEBUG]:         RSM_HPC_LOCAL_PLATFORM=Windows
+[7:19:24 PM][DEBUG]:         RSM_HPC_STORAGEID=<JobId>    <id>93b4d40c-1287-436b-a9c6-beb63ede1779</id>    <nativeId>t0lb2kbl.mmi=LocalNoCopy#localhost$C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics\</nativeId>    <timestamp>Sunday, April 26, 2026 04:19:09.182 PM</timestamp>    <fullyDefined>True</fullyDefined></JobId>
+[7:19:24 PM][DEBUG]:         CFX5EXECDIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\bin\winnt-amd64
+[7:19:24 PM][DEBUG]:         RSM_HPC_STAGING=C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics
+[7:19:24 PM][DEBUG]:         ANSYS_DPF_ACCEPT_LA=Y
+[7:19:24 PM][DEBUG]:         FPS_BROWSER_USER_PROFILE_STRING=Default
+[7:19:24 PM][DEBUG]:         GEMINI_API_KEY=AIzaSyDvY4L84kke5I-r44vaXZwmfZ20jxUOqYg
+[7:19:24 PM][DEBUG]:         OneDriveConsumer=C:\Users\ekryt\OneDrive
+[7:19:24 PM][DEBUG]:         SoS_debug_exe=C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\sos\sos_console.exe
+[7:19:24 PM][DEBUG]:         ComSpec=C:\WINDOWS\system32\cmd.exe
+[7:19:24 PM][DEBUG]:         RSM_HPC_STDERRFILE=stderr_20ee54c8-7e08-4a93-8f39-ece49270f8cd.rsmout
+[7:19:24 PM][DEBUG]:         CADOE_DOCDIR261=C:\Program Files\ANSYS Inc\ANSYS Student\v261\CommonFiles\help\en-us\solviewer
+[7:19:24 PM][DEBUG]:         CFX5_CCL_PARSER_PACKAGE=CUEPost
+[7:19:24 PM][DEBUG]:         ANSYS_RSM_CPP_CLIENT_PID=23948
+[7:19:24 PM][DEBUG]:         RSM_TASK_WORKING_DIRECTORY=C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics
+[7:19:24 PM][DEBUG]:         no_grpc_proxy=localhost
+[7:19:24 PM][DEBUG]:         FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+[7:19:24 PM][DEBUG]:         RSM_HPC_JOBTYPE=Workbench_ANSYS
+[7:19:24 PM][DEBUG]:         CFX5_CCL_LIBSDIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\etc
+[7:19:24 PM][DEBUG]:         CFX5BINDIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\bin
+[7:19:24 PM][DEBUG]:         RSM_CONFIGUREDQUEUE_NAME=Local
+[7:19:24 PM][DEBUG]:         SESSIONNAME=Console
+[7:19:24 PM][DEBUG]:         RSM_USE_SSH_LINUX=True
+[7:19:24 PM][DEBUG]:         ANSYS_LICENSING_ACL_PER_SESSION=0
+[7:19:24 PM][DEBUG]:         gaf=C:\Users\ekryt\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\scripts
+[7:19:24 PM][DEBUG]:         RSM_HPC_PLATFORMSTORAGEID=C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics\
+[7:19:24 PM][DEBUG]:         RSM_IRON_PYTHON_HOME=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\IronPython
+[7:19:24 PM][DEBUG]:         CUE_NO_DEBUG_OUT=1
+[7:19:24 PM][DEBUG]:         RSM_HPC_QUEUE=local
+[7:19:24 PM][DEBUG]:         ANSYSLI_CLIENT_IDLE_TIMEOUT=10
+[7:19:24 PM][DEBUG]:         RSM_HPC_STDOUTLIVE=stdout_20ee54c8-7e08-4a93-8f39-ece49270f8cd.live
+[7:19:24 PM][DEBUG]:         RSM_HPC_NODE_EXCLUSIVE=FALSE
+[7:19:24 PM][DEBUG]:         RSM_HPC_SUBMITHOST=localhost
+[7:19:24 PM][DEBUG]:         phyt=C:\Users\ekryt\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages
+[7:19:24 PM][DEBUG]:         CFX5PERLDIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\tools\perl-5.38.2\bin\MSWin32-x64-perlio
+[7:19:24 PM][DEBUG]:         PUBLIC=C:\Users\Public
+[7:19:24 PM][DEBUG]:         P_SCHEMA=C:\Program Files\ANSYS Inc\ANSYS Student\v261\AISOL\CADIntegration\Parasolid\PSchema
+[7:19:24 PM][DEBUG]:         CFX5_CCL_PARSER=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\lib\ccl
+[7:19:24 PM][DEBUG]:         DESKTOP_CONNECTOR_DIR=C:\Program Files\Autodesk\Desktop Connector\
+[7:19:24 PM][DEBUG]:         CFX_TOOLS_ROOT=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\tools
+[7:19:24 PM][DEBUG]:         QT_D3DCREATE_MULTITHREADED=1
+[7:19:24 PM][DEBUG]:         RSM_HPC_ANSYS_LOCAL_INSTALL_DIRECTORY=C:\Program Files\ANSYS Inc\ANSYS Student\v261
+[7:19:24 PM][DEBUG]:         CFX5ROOT=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX
+[7:19:24 PM][DEBUG]:         ANSYS_SYSDIR=winx64
+[7:19:24 PM][DEBUG]:         ANSYS261_DIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\ANSYS
+[7:19:24 PM][DEBUG]:         CFX5PERL=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\tools\perl-5.38.2\bin\MSWin32-x64-perlio\perl.exe
+[7:19:24 PM][DEBUG]:         RSM_PYTHON_HOME=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python
+[7:19:24 PM][DEBUG]:         ANSYSCL_SESSION_ID=4f580497b542f3294bca032cb2727d07
+[7:19:24 PM][DEBUG]:         LSTC_LICENSE=Ansys
+[7:19:24 PM][DEBUG]:         ANSYS_APIP_SESSION_ID=820226be-e35c-4a1d-9c8f-1a0272bd074c
+[7:19:24 PM][DEBUG]:         TMP=C:\Users\ekryt\AppData\Local\Temp
+[7:19:24 PM][DEBUG]:         RSM_HPC_DISPLAYNAME=unknown-Model-Explicit Dynamics-Solution
+[7:19:24 PM][DEBUG]:         ANSYS_RSM_CPP_CLIENT_HOST=localhost
+[7:19:24 PM][DEBUG]:         PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+[7:19:24 PM][DEBUG]:         LOCALAPPDATA=C:\Users\ekryt\AppData\Local
+[7:19:24 PM][DEBUG]:         CFX5LIBDIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\lib
+[7:19:24 PM][DEBUG]:         RSM_HPC_KEYWORD=ARC
+[7:19:24 PM][DEBUG]:         AWP_ROOT261=C:\Program Files\ANSYS Inc\ANSYS Student\v261
+[7:19:24 PM][DEBUG]:         SoS_exe=C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\sos\sos.exe
+[7:19:24 PM][DEBUG]:         RSM_HPC_DISTRIBUTED=TRUE
+[7:19:24 PM][DEBUG]:         ZES_ENABLE_SYSMAN=1
+[7:19:24 PM][DEBUG]:         ANS_RSM_APPDATA=C:\Users\ekryt\AppData\Roaming\Ansys\v261\RSM
+[7:19:24 PM][DEBUG]:         CADOE_LIBDIR261=C:\Program Files\ANSYS Inc\ANSYS Student\v261\CommonFiles\Language\en-us
+[7:19:24 PM][DEBUG]:         ANSYS_LICENSING_WORKFLOW_SESSION=<DATA><ID>c73b26e90e06590442ce33d62f60ac7f</ID></DATA>
+[7:19:24 PM][DEBUG]:         __KMP_REGISTERED_LIB_23948=00007FF987E1EE14-cafe8fa5-libiomp5md.dll
+[7:19:24 PM][DEBUG]:         RSM_HPC_SCRIPTS_DIRECTORY_LOCAL=C:\Program Files\ANSYS Inc\ANSYS Student\v261\RSM\Config\scripts
+[7:19:24 PM][DEBUG]:         JAVA_HOME=C:\Program Files\Java\jdk-17
+[7:19:24 PM][DEBUG]:         CFX_DATA_DIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\etc
+[7:19:24 PM][DEBUG]:         ANSYSCL261_DIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\licensingclient
+[7:19:24 PM][DEBUG]:         RSM_HPC_WORKDIR=C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics
+[7:19:24 PM][DEBUG]:         OneDrive=C:\Users\ekryt\OneDrive
+[7:19:24 PM][DEBUG]:         RSM_HPC_CORES=4
+[7:19:24 PM][DEBUG]:         ANSYS_SYSDIR32=intel
+[7:19:24 PM][DEBUG]:         SoS_install_dir=C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\sos\
+[7:19:24 PM][DEBUG]:         AWP_TEMP_DIR=C:\Users\ekryt\AppData\Local\Temp\ANSYS.ekryt.1
+[7:19:24 PM][DEBUG]:         DriverData=C:\Windows\System32\Drivers\DriverData
+[7:19:24 PM][DEBUG]:         RSM_HPC_COMMAND=clusterjob_20ee54c8-7e08-4a93-8f39-ece49270f8cd.bat
+[7:19:24 PM][DEBUG]:         RSM_QUEUE_NAME=local
+[7:19:24 PM][DEBUG]:         RSM_HPC_CLUSTER_TARGET_PLATFORM=Windows
+[7:19:24 PM][DEBUG]:         ANSYS_RSM_CPP_CLIENT_PORT=58613
+[7:19:24 PM][DEBUG]:         ANSYS_PYTHON=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python
+[7:19:24 PM][DEBUG]:         GOPATH=C:\Users\ekryt\go
+[7:19:24 PM][DEBUG]:         TEMP=C:\Users\ekryt\AppData\Local\Temp
+[7:19:24 PM][DEBUG]:         RSM_PYTHON_EXE=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\python.exe
+[7:19:24 PM][DEBUG]:         RSM_HPC_JOBNAME=AUTODYN
+[7:19:24 PM][DEBUG]:         RSM_HPC_PARSE_MARKER=START
+[7:19:24 PM][DEBUG]:         ANSYS_RSM_CPP_CONNECTOR_PORT=58612
+[7:19:24 PM][DEBUG]:         EFC_12700_1592913036=1
+[7:19:24 PM][DEBUG]:         USERDOMAIN_ROAMINGPROFILE=YUSUF
+[7:19:24 PM][DEBUG]:         AWP_LOCALE261=en-us
+[7:19:24 PM][DEBUG]:         CFX5_CCL_RULES=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\etc\RULES
+[7:19:24 PM][DEBUG]:         CFX5_CCL_RULESDIR=C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CFX\etc
+[7:19:24 PM][DEBUG]:         RSM_HPC_STDERRLIVE=stderr_20ee54c8-7e08-4a93-8f39-ece49270f8cd.live
+[7:19:24 PM][DEBUG]:         ARC_JOBID=1
+[7:19:24 PM][DEBUG]:         ARC_NODES=yusuf:4
+[7:19:24 PM][DEBUG]:         ARC_MASTER_MACHINE=yusuf
+[7:19:24 PM][DEBUG]: -----------------------------------------------------------------------
+[7:19:24 PM][DEBUG]: 
+Active code page: 65001
+Job started on YUSUF
+ClusterSharedDirectory=C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics
+AWP_ROOT261=C:\Program Files\ANSYS Inc\ANSYS Student\v261
+Command=C:\Program Files\ANSYS Inc\ANSYS Student\v261/commonfiles/CPython/3_10/winx64/Release/python/python.exe
+running the commmand
+command: "C:\Program Files\ANSYS Inc\ANSYS Student\v261/commonfiles/CPython/3_10/winx64/Release/python/python.exe" -B -E "C:\Program Files\ANSYS Inc\ANSYS Student\v261/RSM/Config/scripts/ClusterJobs.py" "C:\Users\ekryt\Desktop\ork to ansys - Copy\output\project_Mech_Files\ExplicitDynamics\control_20ee54c8-7e08-4a93-8f39-ece49270f8cd.rsm"

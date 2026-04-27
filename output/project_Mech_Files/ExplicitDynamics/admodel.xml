@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?> 
+<AUTODYNSummary>
+<Model>
+<Name>admodel</Name>
+<Job>
+<Property name="Type">
+<Data format="string">Parallel</Data>
+<Units />
+</Property>
+<Property name="Number Of Tasks">
+<Data format="int">4</Data>
+<Units />
+</Property>
+</Job>
+<Property name="Precision">
+<Data format="string">Double</Data>
+<Units />
+</Property>
+<Property name="Beta Options">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="Number of Parts">
+<Data format="int">5</Data>
+<Units />
+</Property>
+<Property name="Number of Bodies">
+<Data format="int">5</Data>
+<Units />
+</Property>
+<Property name="Number of Elements">
+<Data format="int">943</Data>
+<Units />
+</Property>
+<Property name="Number of Nodes">
+<Data format="int">1091</Data>
+<Units />
+</Property>
+<Mesh>
+<HexElements>432</HexElements>
+<PentaElements>0</PentaElements>
+<TetElements>511</TetElements>
+<QuadElements>0</QuadElements>
+<TriElements>0</TriElements>
+<BeamElements>0</BeamElements>
+<SplitPyramidElements>0</SplitPyramidElements>
+</Mesh>
+<RemotePoints>
+</RemotePoints>
+<Bodies>
+<Body>
+<Name>nose_cone|Solid</Name>
+<Property name="ID">
+<Data format="int">63</Data>
+<Units />
+</Property>
+<Property name="Coordinate System ID">
+<Data format="int">18</Data>
+<Units />
+</Property>
+<TetPressureIntegration>Average Nodal</TetPressureIntegration>
+</Body>
+<Body>
+<Name>body_tube|Solid</Name>
+<Property name="ID">
+<Data format="int">79</Data>
+<Units />
+</Property>
+<Property name="Coordinate System ID">
+<Data format="int">18</Data>
+<Units />
+</Property>
+<HexIntegrationType>Exact</HexIntegrationType>
+<HourglassDamping>AD Standard</HourglassDamping>
+<Property name="Viscous Coefficient">
+<Data format="float"> 1.00000E-01</Data>
+<Units />
+</Property>
+</Body>
+<Body>
+<Name>freeform_fin_0|Solid</Name>
+<Property name="ID">
+<Data format="int">106</Data>
+<Units />
+</Property>
+<Property name="Coordinate System ID">
+<Data format="int">18</Data>
+<Units />
+</Property>
+<HexIntegrationType>Exact</HexIntegrationType>
+<HourglassDamping>AD Standard</HourglassDamping>
+<Property name="Viscous Coefficient">
+<Data format="float"> 1.00000E-01</Data>
+<Units />
+</Property>
+</Body>
+<Body>
+<Name>freeform_fin_0|Solid[2]</Name>
+<Property name="ID">
+<Data format="int">133</Data>
+<Units />
+</Property>
+<Property name="Coordinate System ID">
+<Data format="int">18</Data>
+<Units />
+</Property>
+<HexIntegrationType>Exact</HexIntegrationType>
+<HourglassDamping>AD Standard</HourglassDamping>
+<Property name="Viscous Coefficient">
+<Data format="float"> 1.00000E-01</Data>
+<Units />
+</Property>
+</Body>
+<Body>
+<Name>freeform_fin_0|Solid[3]</Name>
+<Property name="ID">
+<Data format="int">160</Data>
+<Units />
+</Property>
+<Property name="Coordinate System ID">
+<Data format="int">18</Data>
+<Units />
+</Property>
+<HexIntegrationType>Exact</HexIntegrationType>
+<HourglassDamping>AD Standard</HourglassDamping>
+<Property name="Viscous Coefficient">
+<Data format="float"> 1.00000E-01</Data>
+<Units />
+</Property>
+</Body>
+</Bodies>
+<EulerDomain>
+</EulerDomain>
+</Model>
+<UnitSystem>
+<Property name="Mass">
+<Data format="string">mg</Data>
+<Units />
+</Property>
+<Property name="Length">
+<Data format="string">mm</Data>
+<Units />
+</Property>
+<Property name="Time">
+<Data format="string">ms</Data>
+<Units />
+</Property>
+</UnitSystem>
+<Symmetry>
+<Property name="SymmetryX">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="SymmetryY">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="SymmetryZ">
+<Data format="string">No</Data>
+<Units />
+</Property>
+</Symmetry>
+<AnalysisSettings>
+<StepControls>
+<Property name="Resume From Time Step">
+<Data format="int">0</Data>
+<Units />
+</Property>
+<Property name="Maximum Time Steps">
+<Data format="int">10000000</Data>
+<Units />
+</Property>
+<Property name="End Time">
+<Data format="float"> 4.50000E+04</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Maximum Energy Error">
+<Data format="float"> 1.00000E-01</Data>
+<Units />
+</Property>
+<Property name="Reference Energy Time Step">
+<Data format="int">0</Data>
+<Units />
+</Property>
+<Property name="Initial Time Step">
+<Data format="float"> 0.00000E+00</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Minimum Time Step">
+<Data format="float"> 0.00000E+00</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Maximum Time Step">
+<Data format="float"> 1.00000E+08</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Time Step Safety Factor">
+<Data format="float"> 9.00000E-01</Data>
+<Units />
+</Property>
+<LoadSteps>
+<LoadStep><Id>           1</Id>
+<Type>Standard</Type>
+<StepAware>
+<Property name="StepEndtime">
+<Data format="float"> 4.50000E+04</Data>
+<Units>ms</Units>
+</Property>
+<Property name="StepDamping">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Step Save Results">
+<Data format="string">Time</Data>
+<Units />
+</Property>
+<Property name="Step Save Results Value">
+<Data format="float"> 2.25000E+03</Data>
+<Units />
+</Property>
+<Property name="Step Save Restarts">
+<Data format="string">Time</Data>
+<Units />
+</Property>
+<Property name="Step Save Restarts Value">
+<Data format="float"> 9.00000E+03</Data>
+<Units />
+</Property>
+<Property name="Step Save Probe Data">
+<Data format="string">Cycles</Data>
+<Units />
+</Property>
+<Property name="Step Save Probe Data Value">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+</StepAware>
+</LoadStep>
+</LoadSteps>
+<LoadCases>
+<LoadCase><Id>         138</Id>
+<Type>Default</Type>
+<LCSteps>           1</LCSteps>
+<CaseAware>
+<Active>          63</Active>
+</CaseAware>
+</LoadCase>
+<LoadCase><Id>         142</Id>
+<Type>Default</Type>
+<LCSteps>           1</LCSteps>
+<CaseAware>
+<Active>          63</Active>
+</CaseAware>
+</LoadCase>
+</LoadCases>
+<ComSnips>
+</ComSnips>
+<Property name="Characteristic Zone Dimension">
+<Data format="string">Diagonals</Data>
+<Units />
+</Property>
+<MassScaling>
+<Property name="Automatic Mass Scaling">
+<Data format="string">No</Data>
+<Units />
+</Property>
+</MassScaling>
+</StepControls>
+<SolverControls>
+<Property name="Unit System">
+<Data format="string">mm, mg, ms</Data>
+<Units />
+</Property>
+<Property name="Hex Integration Type">
+<Data format="string">Exact</Data>
+<Units />
+</Property>
+<Property name="Tet Pressure Integration">
+<Data format="string">Average Nodal</Data>
+<Units />
+</Property>
+<Property name="Density Update">
+<Data format="string">Program Controlled</Data>
+<Units />
+</Property>
+<Property name="Minimum Velocity">
+<Data format="float"> 1.00000E-06</Data>
+<Units>m/s</Units>
+</Property>
+<Property name="Maximum Velocity">
+<Data format="float"> 1.00000E+10</Data>
+<Units>m/s</Units>
+</Property>
+<Property name="Radius Cutoff">
+<Data format="float"> 1.00000E-03</Data>
+<Units>mm</Units>
+</Property>
+<Property name="Minimum Strain Rate Cutoff">
+<Data format="float"> 1.00000E-10</Data>
+<Units />
+</Property>
+</SolverControls>
+<EulerDomainControls>
+<Property name="Euler Tracking">
+<Data format="string">Track By Body</Data>
+<Units />
+</Property>
+</EulerDomainControls>
+<DampingControls>
+<Property name="Linear Artificial Viscosity">
+<Data format="float"> 2.00000E-01</Data>
+<Units />
+</Property>
+<Property name="Quadratic Artificial Viscosity">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Linear Viscosity in Expansion">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="Artificial Viscosity Shells">
+<Data format="string">Yes</Data>
+<Units />
+</Property>
+<Property name="Hourglass Damping">
+<Data format="string">AD Standard</Data>
+<Units />
+</Property>
+<Property name="Viscous Coefficient">
+<Data format="float"> 1.00000E-01</Data>
+<Units />
+</Property>
+<Property name="Static Damping">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+</DampingControls>
+<ErosionControls>
+<Property name="On Geometric Strain Limit">
+<Data format="string">Yes</Data>
+<Units />
+</Property>
+<Property name="Geometric Strain Limit">
+<Data format="float"> 1.50000E+00</Data>
+<Units />
+</Property>
+<Property name="On Material Failure">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="On Minimum Element Timestep">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="Retain Inertia of Eroded Eleme">
+<Data format="string">Yes</Data>
+<Units />
+</Property>
+</ErosionControls>
+<OutputControls>
+<Property name="StepAware Output Controls">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="Save Results">
+<Data format="float"> 2.25000E+03</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Save Restart Files">
+<Data format="float"> 9.00000E+03</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Save Probe Data">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Save Contact Forces Data">
+<Data format="string">No</Data>
+<Units />
+</Property>
+<Property name="Print Energy Summary">
+<Data format="float"> 9.00000E+03</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Solution Output Frequency">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="User Edits (EXEDIT)">
+<Data format="int">100000000</Data>
+<Units />
+</Property>
+</OutputControls>
+<SphControls>
+<Property name="Quadratic Viscosity">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Linear Viscosity">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Smoothing Length">
+<Data format="int">0</Data>
+<Units />
+</Property>
+<Property name="Density Calculation">
+<Data format="int">0</Data>
+<Units />
+</Property>
+<Property name="Work Unit Size">
+<Data format="float"> 8.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Buffer Zone Size">
+<Data format="float"> 2.00000E+00</Data>
+<Units />
+</Property>
+<Property name="SPH Cutoff">
+<Data format="int">0</Data>
+<Units />
+</Property>
+<Property name="Minimum Timestep">
+<Data format="float"> 1.00000E-07</Data>
+<Units>ms</Units>
+</Property>
+</SphControls>
+</AnalysisSettings>
+<Materials>
+<Material><Name>Structural Steel</Name>
+<Equation>
+<Name>Equation of State</Name>
+<Type>Linear</Type>
+<Property name="Reference density">
+<Data format="float"> 7.85000E+00</Data>
+<Units>g/cm3</Units>
+</Property>
+<Property name="Bulk Modulus">
+<Data format="float"> 1.66667E+08</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Reference Temperature">
+<Data format="float"> 2.95150E+02</Data>
+<Units>K</Units>
+</Property>
+<Property name="Specific Heat">
+<Data format="float"> 4.34000E+02</Data>
+<Units>J/kgK</Units>
+</Property>
+<Property name="Thermal Conductivity">
+<Data format="float"> 0.00000E+00</Data>
+<Units>J/mKs</Units>
+</Property>
+</Equation>
+<Equation>
+<Name>Strength</Name>
+<Type>Elastic</Type>
+<Property name="Shear Modulus">
+<Data format="float"> 7.69231E+07</Data>
+<Units>kPa</Units>
+</Property>
+</Equation>
+<Equation>
+<Name>Failure</Name>
+<Type>None</Type>
+</Equation>
+<Equation>
+<Name>Erosion</Name>
+<Type>None</Type>
+</Equation>
+<Equation>
+<Name>Material Cutoffs</Name>
+<Type />
+<Property name="Maximum Expansion">
+<Data format="float"> 1.00000E-01</Data>
+<Units>none</Units>
+</Property>
+<Property name="Minimum Density Factor">
+<Data format="float"> 1.00000E-04</Data>
+<Units>none</Units>
+</Property>
+<Property name="Minimum Density Factor (SPH)">
+<Data format="float"> 2.00000E-01</Data>
+<Units>none</Units>
+</Property>
+<Property name="Maximum Density Factor (SPH)">
+<Data format="float"> 3.00000E+00</Data>
+<Units>none</Units>
+</Property>
+<Property name="Minimum Soundspeed">
+<Data format="float"> 1.00000E-06</Data>
+<Units>m/s</Units>
+</Property>
+<Property name="Maximum Soundspeed (SPH)">
+<Data format="float"> 1.01000E+20</Data>
+<Units>m/s</Units>
+</Property>
+<Property name="Maximum Temperature">
+<Data format="float"> 1.01000E+20</Data>
+<Units>K</Units>
+</Property>
+</Equation>
+<Reference>
+                                                                                                                                                                                                                                                                
+</Reference>
+</Material>
+</Materials>
+<InitialConditions>
+<InitialCondition>
+<Name>IC#    1</Name>
+<Property name="Material">
+<Data format="string">Structural Steel</Data>
+<Units />
+</Property>
+<Property name="Density">
+<Data format="float"> 7.85000E+00</Data>
+<Units>g/cm3</Units>
+</Property>
+<Property name="Internal Energy">
+<Data format="float"> 0.00000E+00</Data>
+<Units>J/kg</Units>
+</Property>
+<Property name="Shell Thickness">
+<Data format="float"> 0.00000E+00</Data>
+<Units>mm</Units>
+</Property>
+<Property name="X Velocity">
+<Data format="float"> 0.00000E+00</Data>
+<Units>m/s</Units>
+</Property>
+<Property name="Y Velocity">
+<Data format="float"> 0.00000E+00</Data>
+<Units>m/s</Units>
+</Property>
+<Property name="Z Velocity">
+<Data format="float"> 0.00000E+00</Data>
+<Units>m/s</Units>
+</Property>
+</InitialCondition>
+</InitialConditions>
+<BoundaryConditions>
+<Boundary>
+<Name>Standard Earth Gravity</Name>
+<Type>Body Acceleration (All Bodies)</Type>
+<CoordinateSystem>0</CoordinateSystem>
+<MobileCoordinateSystem>0</MobileCoordinateSystem>
+<LoadCaseID>1</LoadCaseID>
+<WBBoundCondID>0</WBBoundCondID>
+<Property name="Gravity X-dir">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Gravity Y-dir">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Gravity Z-dir">
+<Data format="float">-9.80665E-03</Data>
+<Units />
+</Property>
+</Boundary>
+<Boundary>
+<Name>Pressure</Name>
+<Type>User Time-Dependant Stress</Type>
+<CoordinateSystem>0</CoordinateSystem>
+<MobileCoordinateSystem>0</MobileCoordinateSystem>
+<LoadCaseID>2</LoadCaseID>
+<WBBoundCondID>0</WBBoundCondID>
+<Property name="Time">
+<Data format="float">0.00000E+00,4.50000E+04</Data>
+<Units>ms</Units>
+</Property>
+<Property name="Pressure">
+<Data format="float">2.00000E-01,2.00000E-01</Data>
+<Units>kPa</Units>
+</Property>
+</Boundary>
+</BoundaryConditions>
+<Gravity>
+<Property name="X Acceleration">
+<Data format="float"> 0.00000E+00</Data>
+<Units>mm/ms2</Units>
+</Property>
+<Property name="Y Acceleration">
+<Data format="float"> 0.00000E+00</Data>
+<Units>mm/ms2</Units>
+</Property>
+<Property name="Z Acceleration">
+<Data format="float">-9.80665E-03</Data>
+<Units>mm/ms2</Units>
+</Property>
+</Gravity>
+<Interaction>
+<Property name="Interaction Type">
+<Data format="string">Trajectory Contact</Data>
+<Units />
+</Property>
+<Property name="Contact Formulation Method">
+<Data format="string">Penalty</Data>
+<Units />
+</Property>
+<Property name="Sliding Contact">
+<Data format="string">Discrete Surface</Data>
+<Units />
+</Property>
+<Property name="Group Contact Treatment">
+<Data format="string">Lumped</Data>
+<Units />
+</Property>
+<Property name="Shell Thickness Factor">
+<Data format="float"> 0.00000E+00</Data>
+<Units>mm</Units>
+</Property>
+<Property name="Element Self Contact">
+<Data format="string">Yes</Data>
+<Units />
+</Property>
+<Property name="Element Self Contact Tolerance">
+<Data format="float"> 2.00000E-01</Data>
+<Units />
+</Property>
+<Matrix>
+<Property name="Part   1-Part   1">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   2">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   3">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   4">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   5">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   1">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   2">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   3">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   4">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   5">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   1">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   2">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   3">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   4">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   5">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   1">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   2">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   3">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   4">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   5">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   1">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   2">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   3">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   4">
+<Data format="int">1</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   5">
+<Data format="int">1</Data>
+<Units />
+</Property>
+</Matrix>
+<DecayConstants>
+<Property name="Part   1-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+</DecayConstants>
+<DynamicCoefficients>
+<Property name="Part   1-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+</DynamicCoefficients>
+<StaticCoefficients>
+<Property name="Part   1-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   1-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   2-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   3-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   4-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   1">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   2">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   3">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   4">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Part   5-Part   5">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+</StaticCoefficients>
+</Interaction>
+<Contacts>
+<BondedContact>
+<Property name="NAME">
+<Data format="string">BONDED -    1</Data>
+<Units />
+</Property>
+<Property name="Breakable">
+<Data format="string">NO</Data>
+<Units />
+</Property>
+<Property name="Maximum Offset">
+<Data format="float"> 1.00000E-04</Data>
+<Units>mm</Units>
+</Property>
+<Property name="Normal Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Normal Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Shear Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Normal Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Normal Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Shear Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Number Of Groups">
+<Data format="int">2</Data>
+<Units />
+</Property>
+<Property name="Group    1">
+<Data format="string">BONDED- 1</Data>
+<Units />
+</Property>
+<Property name="Group    2">
+<Data format="string">BONDED- 2</Data>
+<Units />
+</Property>
+</BondedContact>
+<BondedContact>
+<Property name="NAME">
+<Data format="string">BONDED -    2</Data>
+<Units />
+</Property>
+<Property name="Breakable">
+<Data format="string">NO</Data>
+<Units />
+</Property>
+<Property name="Maximum Offset">
+<Data format="float"> 1.00000E-04</Data>
+<Units>mm</Units>
+</Property>
+<Property name="Normal Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Normal Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Shear Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Normal Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Normal Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Shear Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Number Of Groups">
+<Data format="int">2</Data>
+<Units />
+</Property>
+<Property name="Group    1">
+<Data format="string">BONDED- 3</Data>
+<Units />
+</Property>
+<Property name="Group    2">
+<Data format="string">BONDED- 4</Data>
+<Units />
+</Property>
+</BondedContact>
+<BondedContact>
+<Property name="NAME">
+<Data format="string">BONDED -    3</Data>
+<Units />
+</Property>
+<Property name="Breakable">
+<Data format="string">NO</Data>
+<Units />
+</Property>
+<Property name="Maximum Offset">
+<Data format="float"> 1.00000E-04</Data>
+<Units>mm</Units>
+</Property>
+<Property name="Normal Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Normal Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Shear Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Normal Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Normal Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Shear Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Number Of Groups">
+<Data format="int">2</Data>
+<Units />
+</Property>
+<Property name="Group    1">
+<Data format="string">BONDED- 5</Data>
+<Units />
+</Property>
+<Property name="Group    2">
+<Data format="string">BONDED- 6</Data>
+<Units />
+</Property>
+</BondedContact>
+<BondedContact>
+<Property name="NAME">
+<Data format="string">BONDED -    4</Data>
+<Units />
+</Property>
+<Property name="Breakable">
+<Data format="string">NO</Data>
+<Units />
+</Property>
+<Property name="Maximum Offset">
+<Data format="float"> 1.00000E-04</Data>
+<Units>mm</Units>
+</Property>
+<Property name="Normal Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Normal Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Force Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>mN</Units>
+</Property>
+<Property name="Shear Force Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Normal Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Normal Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Shear Stress Limit">
+<Data format="float"> 1.00000E+20</Data>
+<Units>kPa</Units>
+</Property>
+<Property name="Shear Stress Exponent">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Number Of Groups">
+<Data format="int">2</Data>
+<Units />
+</Property>
+<Property name="Group    1">
+<Data format="string">BONDED- 7</Data>
+<Units />
+</Property>
+<Property name="Group    2">
+<Data format="string">BONDED- 8</Data>
+<Units />
+</Property>
+</BondedContact>
+<Reinforcement>
+<Scoping>
+</Scoping>
+</Reinforcement>
+</Contacts>
+<CrossSections>
+</CrossSections>
+<ResultTrackers>
+</ResultTrackers>
+<CoordinateSystems>
+<CoordinateSystem><Id>          18</Id>
+<Type>Cartesian</Type>
+<Origin>
+<Property name="OriginX">
+<Data format="float"> 0.00000E+00</Data>
+<Units>mm</Units>
+</Property>
+<Property name="OriginY">
+<Data format="float"> 0.00000E+00</Data>
+<Units>mm</Units>
+</Property>
+<Property name="OriginZ">
+<Data format="float"> 0.00000E+00</Data>
+<Units>mm</Units>
+</Property>
+</Origin>
+<DirectionalVectors>
+<Property name="X11">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Y11">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Z11">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="X22">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Y22">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Z22">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="X33">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Y33">
+<Data format="float"> 0.00000E+00</Data>
+<Units />
+</Property>
+<Property name="Z33">
+<Data format="float"> 1.00000E+00</Data>
+<Units />
+</Property>
+</DirectionalVectors>
+</CoordinateSystem>
+</CoordinateSystems>
+<Detonations>
+</Detonations>
+<LayerSections>
+</LayerSections>
+<NamedSelections>
+<NamedSelection ID="           1">
+<Name>BONDED- 1</Name>
+<Size>12</Size>
+<type>Face</type>
+</NamedSelection>
+<NamedSelection ID="           2">
+<Name>BONDED- 2</Name>
+<Size>26</Size>
+<type>Face</type>
+</NamedSelection>
+<NamedSelection ID="           3">
+<Name>BONDED- 3</Name>
+<Size>8</Size>
+<type>Face</type>
+</NamedSelection>
+<NamedSelection ID="           4">
+<Name>BONDED- 4</Name>
+<Size>408</Size>
+<type>Face</type>
+</NamedSelection>
+<NamedSelection ID="           5">
+<Name>BONDED- 5</Name>
+<Size>8</Size>
+<type>Face</type>
+</NamedSelection>
+<NamedSelection ID="           6">
+<Name>BONDED- 6</Name>
+<Size>408</Size>
+<type>Face</type>
+</NamedSelection>
+<NamedSelection ID="           7">
+<Name>BONDED- 7</Name>
+<Size>8</Size>
+<type>Face</type>
+</NamedSelection>
+<NamedSelection ID="           8">
+<Name>BONDED- 8</Name>
+<Size>408</Size>
+<type>Face</type>
+</NamedSelection>
+</NamedSelections>
+</AUTODYNSummary>

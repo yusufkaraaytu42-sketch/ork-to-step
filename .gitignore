@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Generated artifacts
+simu_output/
+step_output/
+step_output_*/
+serializer.log
+output/*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
