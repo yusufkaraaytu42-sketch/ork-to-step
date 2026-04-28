@@ -123,6 +123,7 @@ class TrapezoidalFinGeom:
     thickness: float
     cant_angle: float = 0.0
     axial_offset: float = 0.0
+    axial_method: str = "bottom"
     material: MaterialProps = field(default_factory=MaterialProps)
 
 
@@ -133,6 +134,7 @@ class FreeformFinGeom:
     points: List[Tuple[float, float]]
     cant_angle: float = 0.0
     axial_offset: float = 0.0
+    axial_method: str = "bottom"
     material: MaterialProps = field(default_factory=MaterialProps)
 
 
@@ -187,6 +189,8 @@ _MATERIAL_DB: Dict[str, Dict[str, float]] = {
                           tensile_strength=55e6, thermal_conductivity=0.21, specific_heat=1200, thermal_expansion=65e-6),
     "ABS": dict(density=1050, youngs_modulus=2.1e9, poissons_ratio=0.39,
                 tensile_strength=40e6, thermal_conductivity=0.17, specific_heat=1386, thermal_expansion=70e-6),
+    "PETG": dict(density=1270, youngs_modulus=2.2e9, poissons_ratio=0.38,
+                 tensile_strength=50e6, thermal_conductivity=0.20, specific_heat=1200, thermal_expansion=60e-6),
     # ─── Composites / Paper ───
     "Cardboard": dict(density=680, youngs_modulus=4.0e9, poissons_ratio=0.30,
                       tensile_strength=30e6, thermal_conductivity=0.06, specific_heat=1340, thermal_expansion=8e-6),
@@ -205,26 +209,56 @@ _MATERIAL_DB: Dict[str, Dict[str, float]] = {
 }
 
 
-def _lookup_material(name: str) -> MaterialProps:
+def _lookup_material(name: str, group: str = "") -> MaterialProps:
     """
     Return a MaterialProps populated from the built-in database.
     Falls back gracefully if the name is not found.
     """
     # Try exact match first, then case-insensitive, then partial match.
+    clean_name = name.strip()
+    # OpenRocket material labels often include suffixes like " - 100% infill".
+    # Try both the full name and the base label before fuzzy matching.
+    name_variants = [clean_name]
+    if " - " in clean_name:
+        name_variants.append(clean_name.split(" - ", 1)[0].strip())
+
     db_key: Optional[str] = None
-    if name in _MATERIAL_DB:
-        db_key = name
-    else:
-        low = name.lower()
+    for candidate in name_variants:
+        if candidate in _MATERIAL_DB:
+            db_key = candidate
+            break
+    if db_key is None:
+        low = clean_name.lower()
         for k in _MATERIAL_DB:
             if k.lower() == low:
                 db_key = k
                 break
         if db_key is None:
+            for base in name_variants:
+                base_low = base.lower()
+                for k in _MATERIAL_DB:
+                    if k.lower() == base_low:
+                        db_key = k
+                        break
+                if db_key is not None:
+                    break
+        if db_key is None:
             for k in _MATERIAL_DB:
                 if k.lower() in low or low in k.lower():
                     db_key = k
                     break
+
+    if db_key is None and group:
+        # Conservative fallback by OpenRocket material group
+        g = group.strip().lower()
+        if g == "plastics":
+            db_key = "ABS"
+        elif g in ("wood", "paper products"):
+            db_key = "Plywood"
+        elif g == "metals":
+            db_key = "Aluminum"
+        elif g == "composites":
+            db_key = "Fiberglass"
 
     if db_key is None:
         logger.warning("Material '%s' not in database; using defaults.", name)
@@ -298,7 +332,7 @@ def _parse_material(elem: ET.Element) -> MaterialProps:
     # Density may be overridden directly in the XML
     xml_density = _safe_float(mat_elem.get("density"), 0.0)
 
-    props = _lookup_material(name)
+    props = _lookup_material(name, mat_elem.get("group", ""))
     props.mat_type = mat_type
     if xml_density > 0:
         props.density = xml_density  # prefer the value from the .ork file
@@ -353,6 +387,7 @@ def parse_ork(ork_path: Path) -> RocketGeometry:
             thickness=_safe_float(_text(fin.find("thickness")), 0.003),
             cant_angle=_safe_float(_text(fin.find("cant"))),
             axial_offset=_safe_float(_text(axial)) if axial is not None else 0.0,
+            axial_method=(axial.get("method", "bottom") if axial is not None else "bottom"),
             material=_parse_material(fin),
         ))
 
@@ -375,6 +410,7 @@ def parse_ork(ork_path: Path) -> RocketGeometry:
             points=pts,
             cant_angle=_safe_float(_text(fin.find("cant"))),
             axial_offset=_safe_float(_text(axial)) if axial is not None else 0.0,
+            axial_method=(axial.get("method", "bottom") if axial is not None else "bottom"),
             material=_parse_material(fin),
         ))
 
@@ -527,11 +563,11 @@ def _build_trapezoidal_fin(fin: TrapezoidalFinGeom, body_radius: float,
     sw, th, br = fin.sweep_length * 1000.0, fin.thickness * 1000.0, body_radius * 1000.0
 
     single = (
-        cq.Workplane("XZ").workplane(offset=br)
+        cq.Workplane("XY")
         .moveTo(0.0, 0.0).lineTo(rc, 0.0).lineTo(sw + tc, sp).lineTo(sw, sp)
         .close().extrude(th)
     )
-    single = single.translate((axial_start_mm, 0, 0))
+    single = single.translate((axial_start_mm, br, -th / 2.0))
 
     if fin.count > 1:
         step = 360.0 / fin.count
@@ -549,11 +585,15 @@ def _build_freeform_fin(fin: FreeformFinGeom, body_radius: float,
     if len(pts_mm) < 3:
         raise ValueError("Freeform fin needs at least 3 points.")
 
-    wp = cq.Workplane("XZ").workplane(offset=br).moveTo(*pts_mm[0])
-    for x, z in pts_mm[1:]:
-        wp = wp.lineTo(x, z)
+    # Normalize the profile so axial position is controlled only by axial_start_mm.
+    x_min = min(p[0] for p in pts_mm)
+    pts_mm = [(x - x_min, y) for x, y in pts_mm]
+
+    wp = cq.Workplane("XY").moveTo(*pts_mm[0])
+    for x, y in pts_mm[1:]:
+        wp = wp.lineTo(x, y)
     single = wp.close().extrude(th)
-    single = single.translate((axial_start_mm, 0, 0))
+    single = single.translate((axial_start_mm, br, -th / 2.0))
 
     if fin.count > 1:
         step = 360.0 / fin.count
@@ -562,6 +602,19 @@ def _build_freeform_fin(fin: FreeformFinGeom, body_radius: float,
             parts = parts.union(single.rotate((0, 0, 0), (1, 0, 0), step * i))
         return parts
     return single
+
+
+def _compute_fin_axial_start_mm(tube_start_mm: float, tube_end_mm: float,
+                                fin_length_mm: float, axial_offset_m: float,
+                                axial_method: str) -> float:
+    offset_mm = axial_offset_m * 1000.0
+    method = (axial_method or "bottom").strip().lower()
+    if method in ("top", "front", "fore"):
+        return tube_start_mm + offset_mm
+    if method in ("middle", "center", "centre"):
+        return ((tube_start_mm + tube_end_mm - fin_length_mm) / 2.0) + offset_mm
+    # Default OpenRocket behavior: "bottom" measures from the aft end.
+    return (tube_end_mm - fin_length_mm) + offset_mm
 
 
 def _build_transition(tr: TransitionGeom, z_offset: float = 0.0, n_pts: int = 32) -> cq.Workplane:
@@ -606,14 +659,29 @@ def build_rocket(geom: RocketGeometry,
     for idx, bt in enumerate(geom.body_tubes):
         name = f"body_tube_{idx}" if len(geom.body_tubes) > 1 else "body_tube"
         parts[name] = _build_body_tube(bt, z_offset=x_cursor)
+        tube_start = x_cursor
         tube_end = x_cursor + bt.length * 1000.0
 
         for fidx, fin in enumerate(geom.trapezoidal_fins):
-            fin_x = tube_end - fin.root_chord * 1000.0 + fin.axial_offset * 1000.0
+            fin_x = _compute_fin_axial_start_mm(
+                tube_start_mm=tube_start,
+                tube_end_mm=tube_end,
+                fin_length_mm=fin.root_chord * 1000.0,
+                axial_offset_m=fin.axial_offset,
+                axial_method=fin.axial_method,
+            )
             parts[f"trap_fin_{fidx}"] = _build_trapezoidal_fin(fin, bt.outer_radius, fin_x)
 
         for fidx, fin in enumerate(geom.freeform_fins):
-            fin_x = tube_end - max(p[0] for p in fin.points) * 1000.0 + fin.axial_offset * 1000.0
+            x_coords = [p[0] for p in fin.points]
+            fin_length_mm = (max(x_coords) - min(x_coords)) * 1000.0
+            fin_x = _compute_fin_axial_start_mm(
+                tube_start_mm=tube_start,
+                tube_end_mm=tube_end,
+                fin_length_mm=fin_length_mm,
+                axial_offset_m=fin.axial_offset,
+                axial_method=fin.axial_method,
+            )
             parts[f"freeform_fin_{fidx}"] = _build_freeform_fin(fin, bt.outer_radius, fin_x)
 
         x_cursor = tube_end
@@ -866,6 +934,7 @@ def _enrich_from_params(geom: RocketGeometry, params_path: Path) -> None:
 def run_conversion(ork_path: Path, params_path: Optional[Path],
                    output_dir: Path,
                    quality: Optional[MeshQuality] = None,
+                   export_materials_files: bool = False,
                    log_callback=None) -> Dict[str, Any]:
     """
     Run the full pipeline. Returns a result dict with keys:
@@ -903,9 +972,11 @@ def run_conversion(ork_path: Path, params_path: Optional[Path],
         step_files = export_step(parts, output_dir)
         result["exported_files"].extend(step_files)
 
-        log("Exporting material data ...")
-        mat_files = export_materials(geom, output_dir)
-        result["exported_files"].extend(mat_files)
+        mat_files: List[Path] = []
+        if export_materials_files:
+            log("Exporting material data ...")
+            mat_files = export_materials(geom, output_dir)
+            result["exported_files"].extend(mat_files)
 
         # Build material report string for GUI
         mats = _collect_materials(geom)
@@ -924,8 +995,9 @@ def run_conversion(ork_path: Path, params_path: Optional[Path],
 
         result["success"] = True
         result["message"] = (
-            f"Done! {len(step_files)} STEP file(s) + {len(mat_files)} material file(s) "
-            f"written to: {output_dir}"
+            f"Done! {len(step_files)} STEP file(s)"
+            + (f" + {len(mat_files)} material file(s)" if export_materials_files else "")
+            + f" written to: {output_dir}"
         )
         log(result["message"])
 
@@ -954,6 +1026,8 @@ def _cli_main() -> None:
     parser.add_argument("--mesh", choices=["coarse", "medium", "fine"], default="coarse",
                         help="Geometry resolution / mesh node density (default: coarse). "
                              "Use 'coarse' to minimize ANSYS node count.")
+    parser.add_argument("--materials", action="store_true",
+                        help="Also export ansys_materials.xml and materials_report.txt.")
     parser.add_argument("--verbose", "-v", action="store_true")
     args = parser.parse_args()
 
@@ -979,7 +1053,8 @@ def _cli_main() -> None:
         parser.error(f"File not found: {args.ork}")
 
     result = run_conversion(args.ork, args.params, args.output,
-                            quality=MeshQuality.from_label(args.mesh))
+                            quality=MeshQuality.from_label(args.mesh),
+                            export_materials_files=args.materials)
 
     print()
     if result["success"]:
@@ -992,9 +1067,10 @@ def _cli_main() -> None:
         print("Import STEP files into ANSYS Workbench via:")
         print("  Geometry > Import > External Geometry File")
         print()
-        print("Import material data via:")
-        print("  Engineering Data > File > Import Engineering Data > ansys_materials.xml")
-        print()
+        if args.materials:
+            print("Import material data via:")
+            print("  Engineering Data > File > Import Engineering Data > ansys_materials.xml")
+            print()
     else:
         print(f"ERROR: {result['message']}")
         sys.exit(1)
@@ -1126,7 +1202,7 @@ def _gui_main() -> None:
 
     # Action button row
     r3 = ttk.Frame(top); r3.pack(fill="x", pady=(8, 0))
-    convert_btn = ttk.Button(r3, text="▶  Convert to STEP + Materials", width=30)
+    convert_btn = ttk.Button(r3, text="▶  Convert to STEP", width=30)
     convert_btn.pack(side="left")
     open_btn = ttk.Button(r3, text="📂 Open Output Folder", width=22)
     open_btn.pack(side="left", padx=(8, 0))
@@ -1338,6 +1414,7 @@ def _gui_main() -> None:
         def worker():
             res = run_conversion(ork_p, params_p, out_p,
                                  quality=quality,
+                                 export_materials_files=False,
                                  log_callback=lambda m: root.after(0, lambda: log_append(m)))
             root.after(0, lambda: on_done(res))
 
