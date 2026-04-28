@@ -131,6 +131,9 @@ python ork_to_step.py rocket.ork
 # Specify output directory and enable verbose logging
 python ork_to_step.py rocket.ork --output step_output -v
 
+# Optional: also export ANSYS engineering-data material files
+python ork_to_step.py rocket.ork --materials
+
 # Optionally supplement geometry from serializer's parameters.json
 python ork_to_step.py rocket.ork --params output/parameters.json
 
@@ -148,6 +151,9 @@ python ork_to_step.py --gui
 | `trap_fin_N.step` | Trapezoidal fins (if present) |
 | `transition_N.step` | Transitions / boat-tails (if present) |
 | `rocket_assembly.step` | All parts combined in a single STEP assembly |
+
+Material files (`ansys_materials.xml`, `materials_report.txt`) are only
+generated when `--materials` is provided.
 
 **Supported nose-cone shapes:** Haack (including LV-Haack / Von Karman),
 ogive, conical, parabolic, power series.
